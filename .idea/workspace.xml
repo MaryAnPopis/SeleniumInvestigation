@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656a5f45-ee85-452b-bf55-f6175fbf7df9" name="Default Changelist" comment="added tc-1.">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" afterDir="false" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,12 +34,6 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="268" />
-    <option name="y" value="-15" />
-    <option name="width" value="1235" />
-    <option name="height" value="670" />
   </component>
   <component name="ProjectId" id="1SL0KTFh6XJuEDeMsfvcQwQtXYZ" />
   <component name="PropertiesComponent">
@@ -77,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestNopCommerce.testCategories">
+  <component name="RunManager" selected="JUnit.TestNopCommerce.testShoppingCart">
     <configuration name="TestNopCommerce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
@@ -107,11 +100,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNopCommerce.testMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNopCommerce.testShoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
-      <option name="METHOD_NAME" value="testMenu" />
+      <option name="METHOD_NAME" value="testShoppingCart" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,18 +122,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TestNopCommerce" />
-      <item itemvalue="JUnit.TestNopCommerce.testMenu" />
       <item itemvalue="JUnit.TestNopCommerce.addProductToWishList" />
       <item itemvalue="JUnit.TestNopCommerce.testWebPageTitle" />
       <item itemvalue="JUnit.TestNopCommerce.testCategories" />
+      <item itemvalue="JUnit.TestNopCommerce.testShoppingCart" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestNopCommerce.testShoppingCart" />
         <item itemvalue="JUnit.TestNopCommerce.testCategories" />
         <item itemvalue="JUnit.TestNopCommerce.addProductToWishList" />
         <item itemvalue="JUnit.TestNopCommerce.testWebPageTitle" />
         <item itemvalue="JUnit.TestNopCommerce" />
-        <item itemvalue="JUnit.TestNopCommerce.testMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +161,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
