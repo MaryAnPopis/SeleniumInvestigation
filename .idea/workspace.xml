@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="656a5f45-ee85-452b-bf55-f6175fbf7df9" name="Default Changelist" comment="added tc-1.">
+    <list default="true" id="656a5f45-ee85-452b-bf55-f6175fbf7df9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" afterDir="false" />
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="TC-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +48,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -70,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestNopCommerce.testShoppingCart">
+  <component name="RunManager" selected="JUnit.TestNopCommerce.testCheckout">
     <configuration name="TestNopCommerce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
@@ -80,21 +81,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNopCommerce.addProductToWishList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumWebdriverInvestigation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
-      <option name="METHOD_NAME" value="addProductToWishList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestNopCommerce.testCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
       <option name="METHOD_NAME" value="testCategories" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNopCommerce.testCheckout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumWebdriverInvestigation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
+      <option name="METHOD_NAME" value="testCheckout" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,19 +122,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestNopCommerce" />
-      <item itemvalue="JUnit.TestNopCommerce.addProductToWishList" />
       <item itemvalue="JUnit.TestNopCommerce.testWebPageTitle" />
       <item itemvalue="JUnit.TestNopCommerce.testCategories" />
       <item itemvalue="JUnit.TestNopCommerce.testShoppingCart" />
+      <item itemvalue="JUnit.TestNopCommerce.testCheckout" />
+      <item itemvalue="JUnit.TestNopCommerce" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestNopCommerce.testCheckout" />
+        <item itemvalue="JUnit.TestNopCommerce" />
         <item itemvalue="JUnit.TestNopCommerce.testShoppingCart" />
         <item itemvalue="JUnit.TestNopCommerce.testCategories" />
-        <item itemvalue="JUnit.TestNopCommerce.addProductToWishList" />
         <item itemvalue="JUnit.TestNopCommerce.testWebPageTitle" />
-        <item itemvalue="JUnit.TestNopCommerce" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +151,16 @@
       <workItem from="1571327507299" duration="28851000" />
       <workItem from="1571493391314" duration="2791000" />
       <workItem from="1574400431559" duration="438000" />
+      <workItem from="1574429010008" duration="5153000" />
     </task>
+    <task id="LOCAL-00001" summary="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods">
+      <created>1574405443365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574405443365</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +181,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added tc-1." />
-    <option name="LAST_COMMIT_MESSAGE" value="added tc-1." />
+    <MESSAGE value="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods" />
   </component>
 </project>
