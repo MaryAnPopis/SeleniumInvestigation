@@ -357,6 +357,9 @@ public class TestNopCommerce {
         // Raise an alert with the success message
         ((JavascriptExecutor) firefox).executeScript("alert('"+ successMessage +"')");
 
+        // Wait for the alert to be closed
+        while (isAlertPresent());
+
         // Close the browser
         firefox.quit();
 
