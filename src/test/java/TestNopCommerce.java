@@ -8,19 +8,21 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Hashtable;
 import java.util.Map;
 
-public class TestNopCommerce
-{
+public class TestNopCommerce {
     private WebDriver chrome;
     private WebDriver firefox;
     private static final String WEB_PAGE_URL = "https://demo.nopcommerce.com";
@@ -73,20 +75,20 @@ public class TestNopCommerce
     public void testMenu() {
         int timeout = 3;
 
-        Hashtable<String,String> nameOfCategories=new Hashtable<String,String>();
-        nameOfCategories.put("Computers", WEB_PAGE_URL +"/computers");
-        nameOfCategories.put("Electronics", WEB_PAGE_URL +"/electronics");
-        nameOfCategories.put ("Apparel", WEB_PAGE_URL +"/apparel");
-        nameOfCategories.put ("Digital downloads", WEB_PAGE_URL +"/digital-downloads");
-        nameOfCategories.put ("Books", WEB_PAGE_URL +"/books");
-        nameOfCategories.put ("Jewelry", WEB_PAGE_URL +"/jewelry");
-        nameOfCategories.put ("Gift Cards", WEB_PAGE_URL +"/gift-cards");
+        Hashtable<String, String> nameOfCategories = new Hashtable<String, String>();
+        nameOfCategories.put("Computers", WEB_PAGE_URL + "/computers");
+        nameOfCategories.put("Electronics", WEB_PAGE_URL + "/electronics");
+        nameOfCategories.put("Apparel", WEB_PAGE_URL + "/apparel");
+        nameOfCategories.put("Digital downloads", WEB_PAGE_URL + "/digital-downloads");
+        nameOfCategories.put("Books", WEB_PAGE_URL + "/books");
+        nameOfCategories.put("Jewelry", WEB_PAGE_URL + "/jewelry");
+        nameOfCategories.put("Gift Cards", WEB_PAGE_URL + "/gift-cards");
 
         // Check the home page url
-        assertEquals(chrome.getCurrentUrl(), WEB_PAGE_URL +"/");
-        assertEquals(firefox.getCurrentUrl(), WEB_PAGE_URL +"/");
+        assertEquals(chrome.getCurrentUrl(), WEB_PAGE_URL + "/");
+        assertEquals(firefox.getCurrentUrl(), WEB_PAGE_URL + "/");
 
-        for (Map.Entry<String,String>  category : nameOfCategories.entrySet()) {
+        for (Map.Entry<String, String> category : nameOfCategories.entrySet()) {
             System.out.println(category);
             // Click on Menu tab Chrome
             chrome.findElement(By.linkText(category.getKey())).click();
@@ -98,7 +100,7 @@ public class TestNopCommerce
             firefox.findElement(By.linkText(category.getKey())).click();
             firefox.manage().timeouts().implicitlyWait(timeout, SECONDS);
             // Check the current url after click
-            assertEquals(firefox.getCurrentUrl(),  category.getValue());
+            assertEquals(firefox.getCurrentUrl(), category.getValue());
         }
         System.out.println("Menu tabs are correct");
     }
@@ -122,8 +124,8 @@ public class TestNopCommerce
         firefox.findElement(wishlistSelector).click();
 
         // Check if the list is empty
-        assertEquals(chrome.findElement(noDataSelector).getText(),  wishListEmptyMessage);
-        assertEquals(firefox.findElement(noDataSelector).getText(),  wishListEmptyMessage);
+        assertEquals(chrome.findElement(noDataSelector).getText(), wishListEmptyMessage);
+        assertEquals(firefox.findElement(noDataSelector).getText(), wishListEmptyMessage);
 
         // Search book in the search bar
         chrome.findElement(searchBarSelector).sendKeys(bookToSearch);
@@ -146,11 +148,57 @@ public class TestNopCommerce
 
 
         // Check if the Fahrenheit 451 is in the wish list
-        assertEquals(chrome.findElement(skuBookSelector).getText() , skuFahrenheit);
-        assertEquals(firefox.findElement(skuBookSelector).getText() , skuFahrenheit);
+        assertEquals(chrome.findElement(skuBookSelector).getText(), skuFahrenheit);
+        assertEquals(firefox.findElement(skuBookSelector).getText(), skuFahrenheit);
 
         System.out.println("Adding a book into the wish list is correct!");
     }
 
+    //    Second investigation tests start here.
+
+    @Test
+    public void testCategories() {
+
+        final WebDriverWait wait = new WebDriverWait(chrome, 20);
+        final WebDriverWait alertWait = new WebDriverWait(chrome, 1);
+        final ExpectedCondition<Boolean> domIsReady = new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+
+        //Hashtable with the categories
+        Hashtable<String, String> nameOfCategories = new Hashtable<String, String>();
+        nameOfCategories.put("Computers", WEB_PAGE_URL + "/computers");
+        nameOfCategories.put("Electronics", WEB_PAGE_URL + "/electronics");
+        nameOfCategories.put("Apparel", WEB_PAGE_URL + "/apparel");
+        nameOfCategories.put("Digital downloads", WEB_PAGE_URL + "/digital-downloads");
+        nameOfCategories.put("Books", WEB_PAGE_URL + "/books");
+        nameOfCategories.put("Jewelry", WEB_PAGE_URL + "/jewelry");
+        nameOfCategories.put("Gift Cards", WEB_PAGE_URL + "/gift-cards");
+
+        for (Map.Entry<String, String> category : nameOfCategories.entrySet()) {
+            System.out.println(category);
+            // Click on Menu tab Chrome
+            chrome.findElement(By.linkText(category.getKey())).click();
+            // Wait for the page to load
+            wait.until(domIsReady);
+            // Check the current url after click
+            assertEquals(chrome.getCurrentUrl(), category.getValue());
+        }
+
+        ((JavascriptExecutor) chrome).executeScript("alert('The test case has been executed succesfully')");
+
+        while (isAlertPresent(alertWait));
+    }
+
+    private boolean isAlertPresent(WebDriverWait wait) {
+        try {
+            wait.until(ExpectedConditions.alertIsPresent());
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
 
 }
