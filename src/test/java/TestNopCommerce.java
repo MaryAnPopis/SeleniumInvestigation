@@ -30,17 +30,14 @@ public class TestNopCommerce {
 
     @BeforeClass
     public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
         WebDriverManager.firefoxdriver().setup();
     }
 
     @Before
     public void setupTest() {
-        chrome = new ChromeDriver();
         firefox = new FirefoxDriver();
 
         // Open page in different browsers
-        chrome.get(WEB_PAGE_URL);
         firefox.get(WEB_PAGE_URL);
     }
 
@@ -57,9 +54,6 @@ public class TestNopCommerce {
 
     @After
     public void teardown() {
-        if (chrome != null) {
-            chrome.quit();
-        }
         if (firefox != null) {
             firefox.quit();
         }
@@ -72,11 +66,9 @@ public class TestNopCommerce {
         String expectedTitle = "nopCommerce demo store";
 
         // Assertion
-        assertEquals(chrome.getTitle(), expectedTitle);
         assertEquals(firefox.getTitle(), expectedTitle);
 
         // Implicit timeout
-        chrome.manage().timeouts().implicitlyWait(timeout, SECONDS);
         firefox.manage().timeouts().implicitlyWait(timeout, SECONDS);
 
         System.out.println("Title is correct");
@@ -97,18 +89,12 @@ public class TestNopCommerce {
         nameOfCategories.put("Gift Cards", WEB_PAGE_URL + "/gift-cards");
 
         // Check the home page url
-        assertEquals(chrome.getCurrentUrl(), WEB_PAGE_URL + "/");
         assertEquals(firefox.getCurrentUrl(), WEB_PAGE_URL + "/");
 
         for (Map.Entry<String, String> category : nameOfCategories.entrySet()) {
             System.out.println(category);
-            // Click on Menu tab Chrome
-            chrome.findElement(By.linkText(category.getKey())).click();
-            chrome.manage().timeouts().implicitlyWait(timeout, SECONDS);
-            // Check the current url after click
-            assertEquals(chrome.getCurrentUrl(), category.getValue());
 
-            // Click on Menu tab Chrome
+            // Click on Menu tab Firefix
             firefox.findElement(By.linkText(category.getKey())).click();
             firefox.manage().timeouts().implicitlyWait(timeout, SECONDS);
             // Check the current url after click
@@ -132,35 +118,26 @@ public class TestNopCommerce {
         By skuBookSelector = By.className("sku-number");
         By whishLitTopBannerSelector = By.cssSelector("a[href='/wishlist']");
 
-        chrome.findElement(wishlistSelector).click();
         firefox.findElement(wishlistSelector).click();
 
         // Check if the list is empty
-        assertEquals(chrome.findElement(noDataSelector).getText(), wishListEmptyMessage);
         assertEquals(firefox.findElement(noDataSelector).getText(), wishListEmptyMessage);
 
         // Search book in the search bar
-        chrome.findElement(searchBarSelector).sendKeys(bookToSearch);
-        chrome.findElement(searchButtonSelector).click();
-
         firefox.findElement(searchBarSelector).sendKeys(bookToSearch);
         firefox.findElement(searchButtonSelector).click();
 
         // Click in the book and go to the page details
-        chrome.findElement(By.linkText(productTitle)).click();
         firefox.findElement(By.linkText(productTitle)).click();
 
         // Add book in to the wishlist
-        chrome.findElement(wishListButtonSelector).click();
         firefox.findElement(wishListButtonSelector).click();
 
         // Click back to the wishlist in the green top banner
-        chrome.findElement(whishLitTopBannerSelector).click();
         firefox.findElement(whishLitTopBannerSelector).click();
 
 
         // Check if the Fahrenheit 451 is in the wish list
-        assertEquals(chrome.findElement(skuBookSelector).getText(), skuFahrenheit);
         assertEquals(firefox.findElement(skuBookSelector).getText(), skuFahrenheit);
 
         System.out.println("Adding a book into the wish list is correct!");
@@ -365,6 +342,43 @@ public class TestNopCommerce {
 
         // Print the success message
         System.out.println(successMessage);
+    }
+
+    @Test
+    public void testList() {
+        String category = "Computers";
+        String firstLowHigh = "Sound Forge Pro 11 (recurring)";
+        String firstHighLow = "Adobe Photoshop CS4";
+        By subCategory = By.cssSelector(".item-grid > div:nth-child(3)");
+        By listView = By.cssSelector(".product-viewmode > a:nth-child(3)");
+        By firstProducSort = By.cssSelector(".details h2 a");
+        String highLowURL = WEB_PAGE_URL + "/software?viewmode=list&orderby=11";
+        By sortDropDown = By.name("products-orderby");
+
+        firefox.findElement(By.linkText(category)).click();
+        firefox.findElement(subCategory).click();
+        firefox.findElement(listView).click();
+
+        Select select = new Select(firefox.findElement(sortDropDown));
+        select.selectByIndex(3);
+
+        // Check that the first result in sort low to high
+        assertEquals(firefox.findElement(firstProducSort).getText(), firstLowHigh);
+
+        // Implicit timeout
+        firefox.manage().timeouts().implicitlyWait(10, SECONDS);
+        Select select2 = new Select(firefox.findElement(sortDropDown));
+        select2.selectByIndex(4);
+        assertEquals(firefox.getCurrentUrl(), highLowURL);
+
+        // Check that the first result in sort high to low
+        assertEquals(firefox.findElement(firstProducSort).getText(), firstHighLow);
+
+        // Raise an alert with the requested message: "The test case has been executed successfully
+        ((JavascriptExecutor) firefox).executeScript("alert('The test case has been executed successfully')");
+
+        // Wait until the alert is dismissed
+        while (isAlertPresent());
     }
 
 }
