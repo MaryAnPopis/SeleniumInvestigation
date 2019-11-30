@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656a5f45-ee85-452b-bf55-f6175fbf7df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_06.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_19.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeleniumWebdriverInvestigation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumWebdriverInvestigation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestNopCommerce$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestNopCommerce$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="421" column="79" selection-start-line="421" selection-start-column="79" selection-end-line="421" selection-end-column="79" />
+            <state relative-caret-position="335">
+              <caret line="456" column="8" selection-start-line="456" selection-start-column="8" selection-end-line="456" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#testMenu#0;class#TestNopCommerce#0" />
@@ -40,7 +27,6 @@
                 <element signature="method#testShoppingCart#0;class#TestNopCommerce#0" />
                 <element signature="method#testCheckout#0;class#TestNopCommerce#0" />
                 <element signature="method#saveExcelOnList#0;class#TestNopCommerce#0" />
-                <element signature="e#17262#17271#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,22 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ac/cr/cenfotec/calidad/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="440">
               <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-              <folding>
-                <element signature="e#160#161#0" expanded="true" />
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
-                <element signature="e#259#260#0" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -122,8 +94,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,7 +152,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575091965992" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575135347432" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -294,6 +266,7 @@
       <workItem from="1574429010008" duration="5153000" />
       <workItem from="1574808625159" duration="153000" />
       <workItem from="1575087383443" duration="4562000" />
+      <workItem from="1575128103817" duration="6453000" />
     </task>
     <task id="LOCAL-00001" summary="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods">
       <created>1574405443365</created>
@@ -306,45 +279,45 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 11m 57s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 18m 12s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 13m 29s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 20m 32s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 14m 29s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 21m 57s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 18m 38s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 24m 05s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 20m 25s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 25m 27s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 21m 35s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 28m 23s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 22m 49s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 29m 33s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 23m 48s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 32m 00s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 31m 16s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 33m 11s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestNopCommerce_testExcel - 2019.11.29 at 23h 31m 56s.xml">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 34m 36s.xml">
       <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12792000" />
+    <option name="totallyTimeSpent" value="19245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1369936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13859275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -353,8 +326,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29474813" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2808146" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31939977" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -416,6 +389,24 @@
     <MESSAGE value="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods" />
     <option name="LAST_COMMIT_MESSAGE" value="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java</url>
+          <line>431</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java</url>
+          <line>450</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -426,29 +417,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ac/cr/cenfotec/calidad/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="440">
           <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/RunAfters.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#728#922#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/RunBefores.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="421" column="79" selection-start-line="421" selection-start-column="79" selection-end-line="421" selection-end-column="79" />
+        <state relative-caret-position="335">
+          <caret line="456" column="8" selection-start-line="456" selection-start-column="8" selection-end-line="456" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testMenu#0;class#TestNopCommerce#0" />
@@ -457,7 +480,6 @@
             <element signature="method#testShoppingCart#0;class#TestNopCommerce#0" />
             <element signature="method#testCheckout#0;class#TestNopCommerce#0" />
             <element signature="method#saveExcelOnList#0;class#TestNopCommerce#0" />
-            <element signature="e#17262#17271#0" expanded="true" />
           </folding>
         </state>
       </provider>
