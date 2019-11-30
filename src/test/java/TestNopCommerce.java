@@ -46,6 +46,7 @@ public class TestNopCommerce {
     @Before
     public void setupTest() {
         driver = new ChromeDriver();
+//        driver = new FirefoxDriver();
 
         // Open page in different browsers
         driver.get(WEB_PAGE_URL);
@@ -399,7 +400,8 @@ public class TestNopCommerce {
         By searchButtonSelector = By.xpath("//input[@class='button-1 search-box-button']");
         By wishListButtonSelector = By.cssSelector(".add-to-wishlist-button");
         By noResult = By.cssSelector(".no-result");
-        List<WebElement> quatityInputs = driver.findElements(By.cssSelector(".qty-input"));
+        By updateWishList = By.name("updatecart");
+
 
         driver.findElement(wishlistSelector).click();
 
@@ -408,10 +410,11 @@ public class TestNopCommerce {
 
 
         ArrayList<Product> products = saveExcelOnList();
-        int counter = 0;
+
         for (Product p : products) {
             driver.findElement(inputSearch).sendKeys(p.getName());
             driver.findElement(searchButtonSelector).click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             if(driver.findElements( noResult ).size()  > 0){
                 driver.findElement(wishlistSelector).click();
@@ -420,13 +423,36 @@ public class TestNopCommerce {
                 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
                 driver.findElement(wishListButtonSelector).click();
                 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-               // quatityInputs.get(counter).sendKeys(String.valueOf(p.getQuantity()));
                 driver.findElement(inputSearch).sendKeys("");
             }
-
-            counter++;
          }
 
+        // Fill the quantity
+        int counter = 0;
+        driver.findElement(wishlistSelector).click();
+        List<WebElement> quantityInputs = driver.findElements(By.cssSelector(".qty-input"));
+        for (Product p : products) {
+            if(quantityInputs.size() > counter) {
+                String quantity = Integer.toString(p.getQuantity());
+                quantityInputs.get(counter).clear();
+                quantityInputs.get(counter).sendKeys( quantity );
+                counter++;
+            }
+        }
+
+        // Update wishlist
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.findElement(updateWishList).click();
+        // Check prices
+        int counterPrice = 0;
+        List<WebElement> pricesInputs = driver.findElements(By.cssSelector(".product-subtotal"));
+        for (Product p : products) {
+            if(pricesInputs.size() > counterPrice) {
+                String quantity = Double.toString(p.getPrice());
+                assertEquals(pricesInputs.get(counterPrice).getText(), "$" + quantity);
+                counterPrice++;
+            }
+        }
 
 
         // Raise an alert with the requested message: "The test case has been executed successfully
