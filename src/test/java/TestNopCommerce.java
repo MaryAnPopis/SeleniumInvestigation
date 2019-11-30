@@ -1,8 +1,9 @@
-import static org.junit.jupiter.api.Assertions.*;
-
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.junit.Assert.assertEquals;
 
+import ac.cr.cenfotec.calidad.Product;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -17,12 +18,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Hashtable;
-import java.util.Map;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class TestNopCommerce {
     private WebDriver chrome;
-    private WebDriver firefox;
+    private WebDriver driver;
     private WebDriverWait loadWait;
     private WebDriverWait alertWait;
     private ExpectedCondition<Boolean> domIsReady;
@@ -31,20 +40,21 @@ public class TestNopCommerce {
     @BeforeClass
     public static void setupClass() {
         WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     @Before
     public void setupTest() {
-        firefox = new FirefoxDriver();
+        driver = new ChromeDriver();
 
         // Open page in different browsers
-        firefox.get(WEB_PAGE_URL);
+        driver.get(WEB_PAGE_URL);
     }
 
     @Before
     public void setupWaits() {
-        loadWait = new WebDriverWait(firefox, 10);
-        alertWait = new WebDriverWait(firefox, 1);
+        loadWait = new WebDriverWait(driver, 10);
+        alertWait = new WebDriverWait(driver, 1);
         domIsReady = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
@@ -54,8 +64,8 @@ public class TestNopCommerce {
 
     @After
     public void teardown() {
-        if (firefox != null) {
-            firefox.quit();
+        if (driver != null) {
+            driver.quit();
         }
     }
 
@@ -66,10 +76,10 @@ public class TestNopCommerce {
         String expectedTitle = "nopCommerce demo store";
 
         // Assertion
-        assertEquals(firefox.getTitle(), expectedTitle);
+        assertEquals(driver.getTitle(), expectedTitle);
 
         // Implicit timeout
-        firefox.manage().timeouts().implicitlyWait(timeout, SECONDS);
+        driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
 
         System.out.println("Title is correct");
     }
@@ -89,16 +99,16 @@ public class TestNopCommerce {
         nameOfCategories.put("Gift Cards", WEB_PAGE_URL + "/gift-cards");
 
         // Check the home page url
-        assertEquals(firefox.getCurrentUrl(), WEB_PAGE_URL + "/");
+        assertEquals(driver.getCurrentUrl(), WEB_PAGE_URL + "/");
 
         for (Map.Entry<String, String> category : nameOfCategories.entrySet()) {
             System.out.println(category);
 
             // Click on Menu tab Firefix
-            firefox.findElement(By.linkText(category.getKey())).click();
-            firefox.manage().timeouts().implicitlyWait(timeout, SECONDS);
+            driver.findElement(By.linkText(category.getKey())).click();
+            driver.manage().timeouts().implicitlyWait(timeout, SECONDS);
             // Check the current url after click
-            assertEquals(firefox.getCurrentUrl(), category.getValue());
+            assertEquals(driver.getCurrentUrl(), category.getValue());
         }
         System.out.println("Menu tabs are correct");
     }
@@ -118,27 +128,26 @@ public class TestNopCommerce {
         By skuBookSelector = By.className("sku-number");
         By whishLitTopBannerSelector = By.cssSelector("a[href='/wishlist']");
 
-        firefox.findElement(wishlistSelector).click();
+        driver.findElement(wishlistSelector).click();
 
         // Check if the list is empty
-        assertEquals(firefox.findElement(noDataSelector).getText(), wishListEmptyMessage);
+        assertEquals(driver.findElement(noDataSelector).getText(), wishListEmptyMessage);
 
         // Search book in the search bar
-        firefox.findElement(searchBarSelector).sendKeys(bookToSearch);
-        firefox.findElement(searchButtonSelector).click();
+        driver.findElement(searchBarSelector).sendKeys(bookToSearch);
+        driver.findElement(searchButtonSelector).click();
 
         // Click in the book and go to the page details
-        firefox.findElement(By.linkText(productTitle)).click();
+        driver.findElement(By.linkText(productTitle)).click();
 
         // Add book in to the wishlist
-        firefox.findElement(wishListButtonSelector).click();
+        driver.findElement(wishListButtonSelector).click();
 
         // Click back to the wishlist in the green top banner
-        firefox.findElement(whishLitTopBannerSelector).click();
-
+        driver.findElement(whishLitTopBannerSelector).click();
 
         // Check if the Fahrenheit 451 is in the wish list
-        assertEquals(firefox.findElement(skuBookSelector).getText(), skuFahrenheit);
+        assertEquals(driver.findElement(skuBookSelector).getText(), skuFahrenheit);
 
         System.out.println("Adding a book into the wish list is correct!");
     }
@@ -162,15 +171,15 @@ public class TestNopCommerce {
         for (Map.Entry<String, String> category : nameOfCategories.entrySet()) {
             System.out.println(category);
             // Click on Menu tab Chrome
-            firefox.findElement(By.linkText(category.getKey())).click();
+            driver.findElement(By.linkText(category.getKey())).click();
             // Wait for the page to load
             loadWait.until(domIsReady);
             // Check the current url after click
-            assertEquals(firefox.getCurrentUrl(), category.getValue());
+            assertEquals(driver.getCurrentUrl(), category.getValue());
         }
 
         // Raise an alert with the requested message: "The test case has been executed successfully
-        ((JavascriptExecutor) firefox).executeScript("alert('The test case has been executed successfully')");
+        ((JavascriptExecutor) driver).executeScript("alert('The test case has been executed successfully')");
 
         // Wait until the alert is dismissed
         while (isAlertPresent());
@@ -203,41 +212,41 @@ public class TestNopCommerce {
         By continueShoppingButtonName = By.name("continueshopping");
         By addToCartSelector = By.className("wishlist-add-to-cart-button");
 
-        firefox.findElement(wishlistSelector).click();
+        driver.findElement(wishlistSelector).click();
 
         // Check if the list is empty
-        assertEquals(firefox.findElement(noDataSelector).getText(), wishListEmptyMessage);
+        assertEquals(driver.findElement(noDataSelector).getText(), wishListEmptyMessage);
 
         // Search book in the search bar
-        firefox.findElement(searchBarSelector).sendKeys(bookToSearch);
-        firefox.findElement(searchButtonSelector).click();
+        driver.findElement(searchBarSelector).sendKeys(bookToSearch);
+        driver.findElement(searchButtonSelector).click();
 
         // Click in the book and go to the page details
-        firefox.findElement(By.linkText(productTitle)).click();
+        driver.findElement(By.linkText(productTitle)).click();
 
         // Add book in to the wishlist
-        firefox.findElement(wishListButtonSelector).click();
+        driver.findElement(wishListButtonSelector).click();
 
         // Click back to the wishlist in the green top banner
-        firefox.findElement(whishLitTopBannerSelector).click();
+        driver.findElement(whishLitTopBannerSelector).click();
 
         // Check if the Fahrenheit 451 is in the wish list
-        assertEquals(firefox.findElement(skuBookSelector).getText(), skuFahrenheit);
+        assertEquals(driver.findElement(skuBookSelector).getText(), skuFahrenheit);
 
         // Select the book to be added to the cart
-        firefox.findElement(addToCartCheckBoxName).click();
+        driver.findElement(addToCartCheckBoxName).click();
 
         // Add the selected book to the cart
-        firefox.findElement(addToCartSelector).click();
+        driver.findElement(addToCartSelector).click();
 
         // Assert if the book added to the cart is the same as the searched book
-        assertEquals(firefox.findElement(skuBookSelector).getText(), skuFahrenheit);
+        assertEquals(driver.findElement(skuBookSelector).getText(), skuFahrenheit);
 
         // Navigate to continue shopping
-        firefox.findElement(continueShoppingButtonName).click();
+        driver.findElement(continueShoppingButtonName).click();
 
         // Raise an alert with the requested message: "The test case # 2 has been executed successfully"
-        ((JavascriptExecutor) firefox).executeScript("alert('The test case # 2 has been executed successfully')");
+        ((JavascriptExecutor) driver).executeScript("alert('The test case # 2 has been executed successfully')");
 
         // Wait until the alert is dismissed
         while (isAlertPresent()) ;
@@ -274,50 +283,50 @@ public class TestNopCommerce {
         String successMessage = "The test case # 3 has been executed successfully.";
 
         // Search book in the search bar
-        firefox.findElement(searchBarSelector).sendKeys(bookToSearch);
-        firefox.findElement(searchButtonSelector).click();
+        driver.findElement(searchBarSelector).sendKeys(bookToSearch);
+        driver.findElement(searchButtonSelector).click();
 
         // Click in the book and go to the page details
-        firefox.findElement(By.linkText(productTitle)).click();
+        driver.findElement(By.linkText(productTitle)).click();
 
         // Add book in to the wishlist
-        firefox.findElement(wishListButtonSelector).click();
+        driver.findElement(wishListButtonSelector).click();
 
         // Click back to the wishlist in the green top banner
-        firefox.findElement(whishLitTopBannerSelector).click();
+        driver.findElement(whishLitTopBannerSelector).click();
 
         // Select the book to be added to the cart
-        firefox.findElement(addToCartCheckBoxName).click();
+        driver.findElement(addToCartCheckBoxName).click();
 
         // Add the selected book to the cart
-        firefox.findElement(addToCartSelector).click();
+        driver.findElement(addToCartSelector).click();
 
         // Create a select element with the given id
-        Select countrySelectElement = new Select(firefox.findElement(By.id(countrySelectID)));
+        Select countrySelectElement = new Select(driver.findElement(By.id(countrySelectID)));
 
         // Select the desired country
         countrySelectElement.selectByValue(desiredCountryValue);
 
         // Input the given postal code in to the input element.
-        firefox.findElement(By.id(postalCodeInputID)).sendKeys(postalCodeToBeAdded);
+        driver.findElement(By.id(postalCodeInputID)).sendKeys(postalCodeToBeAdded);
 
         // Click on the estimate shipping button
-        firefox.findElement(By.id(estimateShippingButtonID)).click();
+        driver.findElement(By.id(estimateShippingButtonID)).click();
 
         // Check the terms of service checkbox
-        firefox.findElement(By.id(termsOfServiceCheckboxID)).click();
+        driver.findElement(By.id(termsOfServiceCheckboxID)).click();
 
         // Click on the checkout button
-        firefox.findElement(By.id(checkoutButtonID)).click();
+        driver.findElement(By.id(checkoutButtonID)).click();
 
         // Assert if the checkout requires you to sign in.
-        assertEquals(expectedTitle, firefox.getTitle());
+        assertEquals(expectedTitle, driver.getTitle());
 
         // Navigate to the shopping cart
-        firefox.navigate().to(shoppingCartURL);
+        driver.navigate().to(shoppingCartURL);
 
         // Create a WebElement object for the quantity input
-        WebElement quantityInputElement = firefox.findElement(By.className(quantityInputClassName));
+        WebElement quantityInputElement = driver.findElement(By.className(quantityInputClassName));
 
         // Clear the text of the quantity input
         quantityInputElement.clear();
@@ -326,19 +335,19 @@ public class TestNopCommerce {
         quantityInputElement.sendKeys(desiredQuantity);
 
         // Update the contents of the shopping cart
-        firefox.findElement(By.name(updateCartButtonName)).click();
+        driver.findElement(By.name(updateCartButtonName)).click();
 
         // Assert if the shopping cart is empty
-        assertEquals(emptyShoppingCartMessage, firefox.findElement(By.className(noDataClassName)).getText());
+        assertEquals(emptyShoppingCartMessage, driver.findElement(By.className(noDataClassName)).getText());
 
         // Raise an alert with the success message
-        ((JavascriptExecutor) firefox).executeScript("alert('"+ successMessage +"')");
+        ((JavascriptExecutor) driver).executeScript("alert('"+ successMessage +"')");
 
         // Wait for the alert to be closed
         while (isAlertPresent());
 
         // Close the browser
-        firefox.quit();
+        driver.quit();
 
         // Print the success message
         System.out.println(successMessage);
@@ -355,30 +364,123 @@ public class TestNopCommerce {
         String highLowURL = WEB_PAGE_URL + "/software?viewmode=list&orderby=11";
         By sortDropDown = By.name("products-orderby");
 
-        firefox.findElement(By.linkText(category)).click();
-        firefox.findElement(subCategory).click();
-        firefox.findElement(listView).click();
+        driver.findElement(By.linkText(category)).click();
+        driver.findElement(subCategory).click();
+        driver.findElement(listView).click();
 
-        Select select = new Select(firefox.findElement(sortDropDown));
+        Select select = new Select(driver.findElement(sortDropDown));
         select.selectByIndex(3);
 
         // Check that the first result in sort low to high
-        assertEquals(firefox.findElement(firstProducSort).getText(), firstLowHigh);
+        assertEquals(driver.findElement(firstProducSort).getText(), firstLowHigh);
 
         // Implicit timeout
-        firefox.manage().timeouts().implicitlyWait(10, SECONDS);
-        Select select2 = new Select(firefox.findElement(sortDropDown));
+        driver.manage().timeouts().implicitlyWait(10, SECONDS);
+        Select select2 = new Select(driver.findElement(sortDropDown));
         select2.selectByIndex(4);
-        assertEquals(firefox.getCurrentUrl(), highLowURL);
+        assertEquals(driver.getCurrentUrl(), highLowURL);
 
         // Check that the first result in sort high to low
-        assertEquals(firefox.findElement(firstProducSort).getText(), firstHighLow);
+        assertEquals(driver.findElement(firstProducSort).getText(), firstHighLow);
 
         // Raise an alert with the requested message: "The test case has been executed successfully
-        ((JavascriptExecutor) firefox).executeScript("alert('The test case has been executed successfully')");
+        ((JavascriptExecutor) driver).executeScript("alert('The test case has been executed successfully')");
 
         // Wait until the alert is dismissed
         while (isAlertPresent());
+    }
+
+    @Test
+    public void testExcel ()throws IOException {
+        String wishListEmptyMessage = "The wishlist is empty!";
+        By wishlistSelector = By.cssSelector(".ico-wishlist");
+        By noDataSelector = By.cssSelector(".no-data");
+        By inputSearch = By.id("small-searchterms");
+        By searchButtonSelector = By.xpath("//input[@class='button-1 search-box-button']");
+        By wishListButtonSelector = By.cssSelector(".add-to-wishlist-button");
+        By noResult = By.cssSelector(".no-result");
+        List<WebElement> quatityInputs = driver.findElements(By.cssSelector(".qty-input"));
+
+        driver.findElement(wishlistSelector).click();
+
+        // Check if the list is empty
+        assertEquals(driver.findElement(noDataSelector).getText(), wishListEmptyMessage);
+
+
+        ArrayList<Product> products = saveExcelOnList();
+        int counter = 0;
+        for (Product p : products) {
+            driver.findElement(inputSearch).sendKeys(p.getName());
+            driver.findElement(searchButtonSelector).click();
+
+            if(driver.findElements( noResult ).size()  > 0){
+                driver.findElement(wishlistSelector).click();
+            } else {
+                driver.findElement(By.linkText(p.getName())).click();
+                driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+                driver.findElement(wishListButtonSelector).click();
+                driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+               // quatityInputs.get(counter).sendKeys(String.valueOf(p.getQuantity()));
+                driver.findElement(inputSearch).sendKeys("");
+            }
+
+            counter++;
+         }
+
+
+
+        // Raise an alert with the requested message: "The test case has been executed successfully
+        ((JavascriptExecutor) driver).executeScript("alert('The test case has been executed successfully')");
+
+        // Wait until the alert is dismissed
+        while (isAlertPresent());
+    }
+
+    private ArrayList saveExcelOnList() throws IOException{
+        String workingDirectory = System.getProperty("user.dir");
+        String fileName = "Parametros.xlsx";
+        // Read excel
+        File excelFile = new File(workingDirectory + "\\" +fileName);
+        FileInputStream fis = new FileInputStream(excelFile);
+
+        XSSFWorkbook workbook = new XSSFWorkbook(fis);
+        XSSFSheet sheet = workbook.getSheetAt(0);
+
+        Iterator<Row> rowIt = sheet.iterator();
+        rowIt.next();
+
+        ArrayList<Product> products = new ArrayList<Product>();
+        while(rowIt.hasNext()) {
+
+            Row row = rowIt.next();
+
+            Iterator<Cell> cellIterator = row.cellIterator();
+            Product newProduct = new Product();
+            while (cellIterator.hasNext()) {
+                Cell cell = cellIterator.next();
+
+
+                if(cell.getCellType() == CellType.STRING) {
+                    String myCellValue = cell.getStringCellValue();
+
+                    if(myCellValue.startsWith("$")){
+                        newProduct.setPrice(Double.parseDouble(myCellValue.substring(1)));
+                    }else {
+                        newProduct.setName(myCellValue);
+                    }
+                }
+
+                if(cell.getCellType() == CellType.NUMERIC) {
+                    newProduct.setQuantity( (int)cell.getNumericCellValue() );
+                }
+            }
+            products.add(newProduct);
+        }
+
+        workbook.close();
+        fis.close();
+
+        return products;
     }
 
 }
