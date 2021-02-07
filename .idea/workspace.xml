@@ -4,29 +4,75 @@
     <list default="true" id="656a5f45-ee85-452b-bf55-f6175fbf7df9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestNopCommerce.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="456" column="8" selection-start-line="456" selection-start-column="8" selection-end-line="456" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#testMenu#0;class#TestNopCommerce#0" />
+                <element signature="method#testCategories#0;class#TestNopCommerce#0" />
+                <element signature="method#isAlertPresent#0;class#TestNopCommerce#0" />
+                <element signature="method#testShoppingCart#0;class#TestNopCommerce#0" />
+                <element signature="method#testCheckout#0;class#TestNopCommerce#0" />
+                <element signature="method#saveExcelOnList#0;class#TestNopCommerce#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ac/cr/cenfotec/calidad/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>firefox</find>
+      <find>wishlist-label</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="TC-2" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ac/cr/cenfotec/calidad/Product.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestNopCommerce.java" />
+      </list>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -35,12 +81,78 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2266" />
+    <option name="y" value="110" />
+    <option name="width" value="1152" />
+    <option name="height" value="627" />
+  </component>
   <component name="ProjectId" id="1SL0KTFh6XJuEDeMsfvcQwQtXYZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="calidad" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumWebdriverInvestigation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumWebdriverInvestigation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571496819267" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575135347432" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -71,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestNopCommerce.testCheckout">
+  <component name="RunManager" selected="JUnit.TestNopCommerce.testExcel">
     <configuration name="TestNopCommerce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
@@ -81,11 +193,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNopCommerce.testCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNopCommerce.addProductToWishList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
-      <option name="METHOD_NAME" value="testCategories" />
+      <option name="METHOD_NAME" value="addProductToWishList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,40 +213,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNopCommerce.testShoppingCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNopCommerce.testExcel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
-      <option name="METHOD_NAME" value="testShoppingCart" />
+      <option name="METHOD_NAME" value="testExcel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNopCommerce.testWebPageTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNopCommerce.testList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumWebdriverInvestigation" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestNopCommerce" />
-      <option name="METHOD_NAME" value="testWebPageTitle" />
+      <option name="METHOD_NAME" value="testList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestNopCommerce.testWebPageTitle" />
-      <item itemvalue="JUnit.TestNopCommerce.testCategories" />
-      <item itemvalue="JUnit.TestNopCommerce.testShoppingCart" />
       <item itemvalue="JUnit.TestNopCommerce.testCheckout" />
       <item itemvalue="JUnit.TestNopCommerce" />
+      <item itemvalue="JUnit.TestNopCommerce.addProductToWishList" />
+      <item itemvalue="JUnit.TestNopCommerce.testList" />
+      <item itemvalue="JUnit.TestNopCommerce.testExcel" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestNopCommerce.testCheckout" />
+        <item itemvalue="JUnit.TestNopCommerce.testExcel" />
+        <item itemvalue="JUnit.TestNopCommerce.addProductToWishList" />
         <item itemvalue="JUnit.TestNopCommerce" />
-        <item itemvalue="JUnit.TestNopCommerce.testShoppingCart" />
-        <item itemvalue="JUnit.TestNopCommerce.testCategories" />
-        <item itemvalue="JUnit.TestNopCommerce.testWebPageTitle" />
+        <item itemvalue="JUnit.TestNopCommerce.testList" />
+        <item itemvalue="JUnit.TestNopCommerce.testCheckout" />
       </list>
     </recent_temporary>
   </component>
@@ -152,6 +264,9 @@
       <workItem from="1571493391314" duration="2791000" />
       <workItem from="1574400431559" duration="438000" />
       <workItem from="1574429010008" duration="5153000" />
+      <workItem from="1574808625159" duration="153000" />
+      <workItem from="1575087383443" duration="4562000" />
+      <workItem from="1575128103817" duration="6453000" />
     </task>
     <task id="LOCAL-00001" summary="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods">
       <created>1574405443365</created>
@@ -163,6 +278,76 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 18m 12s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 20m 32s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 21m 57s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 24m 05s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 25m 27s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 28m 23s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 29m 33s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 32m 00s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 33m 11s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestNopCommerce_testExcel - 2019.11.30 at 11h 34m 36s.xml">
+      <configuration name="TestNopCommerce.testExcel" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="19245000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="22" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13859275" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2808146" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31939977" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.22936763" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -172,8 +357,28 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -183,5 +388,101 @@
     <MESSAGE value="added tc-1." />
     <MESSAGE value="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods" />
     <option name="LAST_COMMIT_MESSAGE" value="added tc-2 and refactored some tc-1 methods for common use, as well as commenting some parts of tc-1's methods" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java</url>
+          <line>431</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java</url>
+          <line>450</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ac/cr/cenfotec/calidad/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/RunAfters.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#728#922#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/RunBefores.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestNopCommerce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="456" column="8" selection-start-line="456" selection-start-column="8" selection-end-line="456" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testMenu#0;class#TestNopCommerce#0" />
+            <element signature="method#testCategories#0;class#TestNopCommerce#0" />
+            <element signature="method#isAlertPresent#0;class#TestNopCommerce#0" />
+            <element signature="method#testShoppingCart#0;class#TestNopCommerce#0" />
+            <element signature="method#testCheckout#0;class#TestNopCommerce#0" />
+            <element signature="method#saveExcelOnList#0;class#TestNopCommerce#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
